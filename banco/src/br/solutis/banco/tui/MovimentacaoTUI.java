@@ -11,7 +11,7 @@ public class MovimentacaoTUI {
 	public static void menu(Conta conta) {
 		String opcao;
 		boolean opcaoValida = false;
-		System.out.println("Selecione a ação desejada");
+		System.out.println("Bem vindo " + conta.getNome() + "! Selecione a ação desejada");
 		do {
 			System.out.println("   1- Depósito");
 			System.out.println("   2- Saque");
@@ -59,7 +59,7 @@ public class MovimentacaoTUI {
 				conta.setLimite();
 				favorecido.setSaldo(favorecido.getSaldo() + valor);
 				favorecido.setLimite();
-				System.out.println("Você transferiu R$ " + valor + " para" + favorecido.getNome());
+				System.out.println("Você transferiu R$ " + valor + " para " + favorecido.getNome());
 			} else {
 				System.out.println("Saldo insuficiente.");
 			}
