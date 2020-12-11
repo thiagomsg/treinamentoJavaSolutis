@@ -50,6 +50,7 @@ public class MovimentacaoTUI {
 		System.out.println("Digite o número da conta do favorecido");
 		numContaFavorecido = sc.nextLine();
 		Conta favorecido = ContaDAO.selecionarConta(numContaFavorecido);
+		
 		if (conta.getTipoConta().getDescricao().equals(favorecido.getTipoConta().getDescricao())) {
 			System.out.println("Digite o valor a transferir");
 			valor = sc.nextDouble();
@@ -80,7 +81,7 @@ public class MovimentacaoTUI {
 			if (valor > conta.getLimite()) {
 				System.out.println("Valor é superior ao limite de R$" + conta.getLimite());
 			}
-		} while (valor > conta.getLimite());
+		} while (valor > conta.getSaldo() + conta.getLimite());
 		if (valor <= conta.getSaldo()) {
 			conta.setSaldo(conta.getSaldo() - valor);
 			conta.setLimite();
