@@ -16,6 +16,7 @@ public class MovimentacaoTUI {
 			System.out.println("   1- Depósito");
 			System.out.println("   2- Saque");
 			System.out.println("   3- Transferência");
+			System.out.println("   4- Exibir dados");
 			opcao = sc.nextLine();
 
 			switch (opcao) {
@@ -29,6 +30,10 @@ public class MovimentacaoTUI {
 				break;
 			case "3":
 				transferir(conta);
+				opcaoValida = true;
+				break;
+			case "4":
+				ContaDAO.imprimir(conta.getNumConta());;
 				opcaoValida = true;
 				break;
 
